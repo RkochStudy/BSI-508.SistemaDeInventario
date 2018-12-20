@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6734C029-CF99-4673-83E3-94C6CE150F2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaDeInventario</RootNamespace>
+    <AssemblyName>SistemaDeInventario</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Connection.cs" />
+    <Compile Include="Data\Global.cs" />
+    <Compile Include="Presentation\AgregarActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AgregarActivo.Designer.cs">
+      <DependentUpon>AgregarActivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AgregarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AgregarDepartamento.Designer.cs">
+      <DependentUpon>AgregarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AgregarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AgregarPrestamo.Designer.cs">
+      <DependentUpon>AgregarPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\CambiarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CambiarContrasena.Designer.cs">
+      <DependentUpon>CambiarContrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MostarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MostarDatos.Designer.cs">
+      <DependentUpon>MostarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Logic.cs" />
+    <Compile Include="Presentation\Opciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Opciones.Designer.cs">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AdministrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AdministrarUsuario.Designer.cs">
+      <DependentUpon>AdministrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Terminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Terminal.Designer.cs">
+      <DependentUpon>Terminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Structures\Departamento.cs" />
+    <Compile Include="Structures\Usuario.cs" />
+    <EmbeddedResource Include="Presentation\AgregarActivo.resx">
+      <DependentUpon>AgregarActivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\AgregarDepartamento.resx">
+      <DependentUpon>AgregarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\AgregarPrestamo.resx">
+      <DependentUpon>AgregarPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CambiarContrasena.resx">
+      <DependentUpon>CambiarContrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MostarDatos.resx">
+      <DependentUpon>MostarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Opciones.resx">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\AdministrarUsuario.resx">
+      <DependentUpon>AdministrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Terminal.resx">
+      <DependentUpon>Terminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeftPanelWallpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginWallpaper2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuPrincipalWallpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Acceder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Acceder-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Cancelar-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Activos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Activos-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Assets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Assets-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Departament.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Departament-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Departamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Departamento-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Hover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Loans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Loans-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Opciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Opciones-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Options-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Prestamos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Prestamos-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-User-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Usuario-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Cancel-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-Login-Enter-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Page-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Page-Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Page-Unselected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Information-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Informacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Informacion-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Registry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Registry-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Registro-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Registro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-CompareAssets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-CompareAssets-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-CompararActivos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-CompararActivos-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-Register-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-RegistrarActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-RegistrarActivo-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-SeeList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-SeeList-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-VerLista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-MP-VerLista-Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Backup.sql" />
+    <Content Include="Initializer.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
